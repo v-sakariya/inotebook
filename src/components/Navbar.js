@@ -1,11 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
   let location = useLocation();
-  useEffect(() => {
-    console.log(location.pathname);
-  }, [location]);
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -26,26 +23,34 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className={`nav-link ${location.pathname === '/'?'active':''}`} aria-current="page" to="/">
+              <Link
+                className={`nav-link ${
+                  location.pathname === "/" ? "active" : ""
+                }`}
+                aria-current="page"
+                to="/"
+              >
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className={`nav-link ${location.pathname === '/about'?'active':''}`} to="/about">
+              <Link
+                className={`nav-link ${
+                  location.pathname === "/about" ? "active" : ""
+                }`}
+                to="/about"
+              >
                 About
               </Link>
             </li>
           </ul>
-          <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
+          <form className="d-flex">
+            <Link className="btn btn-outline-success mx-1" to='/login'>
+              Login
+            </Link>
+            <Link className="btn btn-outline-success mx-1" to='/signup'>
+              Signup
+            </Link>
           </form>
         </div>
       </div>
