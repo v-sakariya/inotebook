@@ -14,7 +14,7 @@ const NoteState = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVlMGMxNDgxNWQzMWQ0MjhkNzRiMWYxIn0sImlhdCI6MTcwOTIzODUxNX0.o2YbgfNBhCSKHEaUhtsiqsaBCd4aHn0W5vjFsNmMu6g",
+          localStorage.getItem('token'),
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
     });
@@ -32,7 +32,7 @@ const NoteState = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVlMGMxNDgxNWQzMWQ0MjhkNzRiMWYxIn0sImlhdCI6MTcwOTIzODUxNX0.o2YbgfNBhCSKHEaUhtsiqsaBCd4aHn0W5vjFsNmMu6g",
+          localStorage.getItem('token'),
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify({ title, description, tag }), // body data type must match "Content-Type" header
@@ -51,7 +51,7 @@ const NoteState = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVlMGMxNDgxNWQzMWQ0MjhkNzRiMWYxIn0sImlhdCI6MTcwOTIzODUxNX0.o2YbgfNBhCSKHEaUhtsiqsaBCd4aHn0W5vjFsNmMu6g",
+          localStorage.getItem('token'),
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
     });
@@ -72,7 +72,7 @@ const NoteState = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVlMGMxNDgxNWQzMWQ0MjhkNzRiMWYxIn0sImlhdCI6MTcwOTIzODUxNX0.o2YbgfNBhCSKHEaUhtsiqsaBCd4aHn0W5vjFsNmMu6g",
+          localStorage.getItem('token'),
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify({ title, description, tag }), // body data type must match "Content-Type" header
@@ -89,7 +89,8 @@ const NoteState = (props) => {
       }
     }
     setNotes(newNotes);
-    //const json = await response.json();
+    const json = await response.json();
+    console.log(json)
   };
   return (
     <NoteContext.Provider

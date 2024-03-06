@@ -15,8 +15,8 @@ const Signup = (props) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVlMGMxNDgxNWQzMWQ0MjhkNzRiMWYxIn0sImlhdCI6MTcwOTIzODUxNX0.o2YbgfNBhCSKHEaUhtsiqsaBCd4aHn0W5vjFsNmMu6g",
+        // "auth-token":
+        //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVlMGMxNDgxNWQzMWQ0MjhkNzRiMWYxIn0sImlhdCI6MTcwOTIzODUxNX0.o2YbgfNBhCSKHEaUhtsiqsaBCd4aHn0W5vjFsNmMu6g",
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify({
@@ -43,7 +43,8 @@ const Signup = (props) => {
   };
 
   return (
-    <div>
+    <div className="container mt-2">
+    <h2 className="my-3">Create an account to use iNotebook</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
